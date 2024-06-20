@@ -25,7 +25,6 @@ namespace CapaPresentacion
         {
             this.Close();
         }
-        //hola
 
         private void btningresar_Click(object sender, EventArgs e)
         {
