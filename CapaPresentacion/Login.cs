@@ -25,7 +25,6 @@ namespace CapaPresentacion
         {
             this.Close();
         }
-
         private void btningresar_Click(object sender, EventArgs e)
         {
             List<Usuario> TEST = new CN_Usuario().Listar();
