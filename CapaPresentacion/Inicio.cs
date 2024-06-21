@@ -54,6 +54,7 @@ namespace CapaPresentacion
             lblusuario.Text = usuarioActual.NombreCompleto;
         }
 
+        //formularios
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
             if (MenuActivo != null)
