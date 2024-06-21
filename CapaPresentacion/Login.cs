@@ -33,7 +33,7 @@ namespace CapaPresentacion
 
             if(ousuario != null)
             {
-                Inicio form = new Inicio();
+                Inicio form = new Inicio(ousuario);
 
                 form.Show();
                 this.Hide();
@@ -53,6 +53,11 @@ namespace CapaPresentacion
             txtdocumento.Text = "";
             txtclave.Text = "";
             this.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
