@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using CapaEntidad;
+﻿using CapaEntidad;
 using CapaNegocio;
 using FontAwesome.Sharp;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+
+//Mario Alberto Rodriguez Delgadillo
 
 namespace CapaPresentacion
 {
@@ -21,9 +17,12 @@ namespace CapaPresentacion
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
 
-        public Inicio(Usuario objusuario)
+        public Inicio(Usuario objusuario = null)
         {
-            usuarioActual = objusuario;
+            if (objusuario == null) 
+                usuarioActual = new Usuario() { NombreCompleto = "ADMIN PREDEFINIDO", IdUsuario = 1 };
+            else
+                usuarioActual = objusuario;
 
             InitializeComponent();
         }
@@ -57,8 +56,8 @@ namespace CapaPresentacion
             foreach (IconMenuItem iconmenu in menu.Items)
             {
                 bool encontrado = ListaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
-                
-                if(encontrado == false)
+
+                if (encontrado == false)
                 {
                     iconmenu.Visible = false;
                 }
@@ -77,7 +76,7 @@ namespace CapaPresentacion
             }
             menu.BackColor = Color.Silver;
             MenuActivo = menu;
-            
+
             if (FormularioActivo != null)
             {
                 FormularioActivo.Close();
