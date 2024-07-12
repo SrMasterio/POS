@@ -274,6 +274,7 @@ namespace CapaPresentacion
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
                 row.Visible = true;
+
             }
         }
     }
